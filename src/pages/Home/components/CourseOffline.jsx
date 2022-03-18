@@ -16,19 +16,19 @@ export default function CourseOffline() {
                     <div className="col-md-4 course">
                         <div className="wrap">
                             <a className="cover" href="#">
-                                <img src="img/img1.png" alt />
+                                <img src="/img/img1.png" alt />
                                 <span className="badge b1">Đã kết thúc</span>
                                 <div className="hover">
                                     <div className="top">
                                         <div className="user">
-                                            <img src="img/icon-user-white.svg" alt />
+                                            <img src="/img/icon-user-white.svg" alt />
                                             12</div>
                                         <div className="heart">
-                                            <img src="img/icon-heart.svg" alt /> 100
+                                            <img src="/img/icon-heart.svg" alt /> 100
                                         </div>
                                     </div>
                                     <div className="share">
-                                        <img src="img/icon-viewmore.svg" alt />
+                                        <img src="/img/icon-viewmore.svg" alt />
                                     </div>
                                 </div>
                             </a>
@@ -43,7 +43,7 @@ export default function CourseOffline() {
                             <div className="bottom">
                                 <div className="teacher">
                                     <div className="avatar">
-                                        <img src="img/avt.png" alt />
+                                        <img src="/img/avt.png" alt />
                                     </div>
                                     <div className="name">Trần Nghĩa</div>
                                 </div>
@@ -54,19 +54,19 @@ export default function CourseOffline() {
                     <div className="col-md-4 course">
                         <div className="wrap">
                             <a className="cover" href="#">
-                                <img src="img/img1.png" alt />
+                                <img src="/img/img1.png" alt />
                                 <span className="badge b2">Đang diễn ra</span>
                                 <div className="hover">
                                     <div className="top">
                                         <div className="user">
-                                            <img src="img/icon-user-white.svg" alt />
+                                            <img src="/img/icon-user-white.svg" alt />
                                             12</div>
                                         <div className="heart">
-                                            <img src="img/icon-heart.svg" alt /> 100
+                                            <img src="/img/icon-heart.svg" alt /> 100
                                         </div>
                                     </div>
                                     <div className="share">
-                                        <img src="img/icon-viewmore.svg" alt />
+                                        <img src="/img/icon-viewmore.svg" alt />
                                     </div>
                                 </div>
                             </a>
@@ -81,7 +81,7 @@ export default function CourseOffline() {
                             <div className="bottom">
                                 <div className="teacher">
                                     <div className="avatar">
-                                        <img src="img/avt.png" alt />
+                                        <img src="/img/avt.png" alt />
                                     </div>
                                     <div className="name">Vương Đặng</div>
                                 </div>
@@ -92,19 +92,19 @@ export default function CourseOffline() {
                     <div className="col-md-4 course">
                         <div className="wrap">
                             <a className="cover" href="#">
-                                <img src="img/img1.png" alt />
+                                <img src="/img/img1.png" alt />
                                 <span className="badge b3">Sắp khai giảng</span>
                                 <div className="hover">
                                     <div className="top">
                                         <div className="user">
-                                            <img src="img/icon-user-white.svg" alt />
+                                            <img src="/img/icon-user-white.svg" alt />
                                             12</div>
                                         <div className="heart">
-                                            <img src="img/icon-heart.svg" alt /> 100
+                                            <img src="/img/icon-heart.svg" alt /> 100
                                         </div>
                                     </div>
                                     <div className="share">
-                                        <img src="img/icon-viewmore.svg" alt />
+                                        <img src="/img/icon-viewmore.svg" alt />
                                     </div>
                                 </div>
                             </a>
@@ -119,7 +119,7 @@ export default function CourseOffline() {
                             <div className="bottom">
                                 <div className="teacher">
                                     <div className="avatar">
-                                        <img src="img/avt.png" alt />
+                                        <img src="/img/avt.png" alt />
                                     </div>
                                     <div className="name">Trần Nghĩa</div>
                                 </div>
@@ -130,18 +130,18 @@ export default function CourseOffline() {
                     <div className="col-md-4 course">
                         <div className="wrap">
                             <a className="cover" href="#">
-                                <img src="img/img1.png" alt />
+                                <img src="/img/img1.png" alt />
                                 <div className="hover">
                                     <div className="top">
                                         <div className="user">
-                                            <img src="img/icon-user-white.svg" alt />
+                                            <img src="/img/icon-user-white.svg" alt />
                                             12</div>
                                         <div className="heart">
-                                            <img src="img/icon-heart.svg" alt /> 100
+                                            <img src="/img/icon-heart.svg" alt /> 100
                                         </div>
                                     </div>
                                     <div className="share">
-                                        <img src="img/icon-viewmore.svg" alt />
+                                        <img src="/img/icon-viewmore.svg" alt />
                                     </div>
                                 </div>
                             </a>
@@ -156,7 +156,7 @@ export default function CourseOffline() {
                             <div className="bottom">
                                 <div className="teacher">
                                     <div className="avatar">
-                                        <img src="img/avt.png" alt />
+                                        <img src="/img/avt.png" alt />
                                     </div>
                                     <div className="name">Trần Nghĩa</div>
                                 </div>
@@ -167,18 +167,18 @@ export default function CourseOffline() {
                     <div className="col-md-4 course">
                         <div className="wrap">
                             <a className="cover" href="#">
-                                <img src="img/img1.png" alt />
+                                <img src="/img/img1.png" alt />
                                 <div className="hover">
                                     <div className="top">
                                         <div className="user">
-                                            <img src="img/icon-user-white.svg" alt />
+                                            <img src="/img/icon-user-white.svg" alt />
                                             12</div>
                                         <div className="heart">
-                                            <img src="img/icon-heart.svg" alt /> 100
+                                            <img src="/img/icon-heart.svg" alt /> 100
                                         </div>
                                     </div>
                                     <div className="share">
-                                        <img src="img/icon-viewmore.svg" alt />
+                                        <img src="/img/icon-viewmore.svg" alt />
                                     </div>
                                 </div>
                             </a>
@@ -193,7 +193,7 @@ export default function CourseOffline() {
                             <div className="bottom">
                                 <div className="teacher">
                                     <div className="avatar">
-                                        <img src="img/avt.png" alt />
+                                        <img src="/img/avt.png" alt />
                                     </div>
                                     <div className="name">Trần Nghĩa</div>
                                 </div>
@@ -204,18 +204,18 @@ export default function CourseOffline() {
                     <div className="col-md-4 course">
                         <div className="wrap">
                             <a className="cover" href="#">
-                                <img src="img/img1.png" alt />
+                                <img src="/img/img1.png" alt />
                                 <div className="hover">
                                     <div className="top">
                                         <div className="user">
-                                            <img src="img/icon-user-white.svg" alt />
+                                            <img src="/img/icon-user-white.svg" alt />
                                             12</div>
                                         <div className="heart">
-                                            <img src="img/icon-heart.svg" alt /> 100
+                                            <img src="/img/icon-heart.svg" alt /> 100
                                         </div>
                                     </div>
                                     <div className="share">
-                                        <img src="img/icon-viewmore.svg" alt />
+                                        <img src="/img/icon-viewmore.svg" alt />
                                     </div>
                                 </div>
                             </a>
@@ -230,7 +230,7 @@ export default function CourseOffline() {
                             <div className="bottom">
                                 <div className="teacher">
                                     <div className="avatar">
-                                        <img src="img/avt.png" alt />
+                                        <img src="/img/avt.png" alt />
                                     </div>
                                     <div className="name">Trần Nghĩa</div>
                                 </div>

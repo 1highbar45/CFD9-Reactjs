@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Action() {
+export default function CallToAction() {
     return (
         <section className="section-action">
             <div className="container">

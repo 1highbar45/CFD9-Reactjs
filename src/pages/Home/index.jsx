@@ -1,11 +1,11 @@
 import React from 'react'
-import Action from './components/Action'
+import CallToAction from './components/CallToAction'
 import Banner from './components/Banner'
 import CourseOffline from './components/CourseOffline'
 import CourseOnline from './components/CourseOnline'
-import Different from './components/Different'
+import Special from './components/Special'
 import Gallery from './components/Gallery'
-import Testimonial from './components/Testimonial'
+import Customer from './components/Customer'
 
 export default function Home() {
     return (
@@ -14,10 +14,10 @@ export default function Home() {
                 <Banner />
                 <CourseOffline />
                 <CourseOnline />
-                <Different />
-                <Testimonial />
+                <Special />
+                <Customer />
                 <Gallery />
-                <Action />
+                <CallToAction />
             </main>
 
         </>

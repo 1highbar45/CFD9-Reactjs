@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Different() {
+export default function Special() {
     return (
         <section className="section-different">
             <div className="container">
@@ -8,9 +8,9 @@ export default function Different() {
                     <div className="titlebox col-md-6 col-sm-12 col-xs-12">
                         <h2 className="main-title white textleft">Những điều <br /><span>đặc biệt</span> tại CFD</h2>
                         <div className="videodif" data-src="video/CFD-video-intro.mp4">
-                            <img src="img/img-cfd-dac-biet.jpg" alt />
+                            <img src="/img/img-cfd-dac-biet.jpg" alt />
                             <div className="play-btn btn-video-intro">
-                                <img src="img/play-icon.svg" alt />
+                                <img src="/img/play-icon.svg" alt />
                             </div>
                         </div>
                     </div>

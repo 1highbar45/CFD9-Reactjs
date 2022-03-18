@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Testimonial() {
+export default function Customer() {
     return (
         <section className="section-testimonial">
             <div className="container">
@@ -17,14 +17,14 @@ export default function Testimonial() {
                                             <h4>Tiến Tài</h4>
                                             <p>Thành viên CFD1</p>
                                         </div>
-                                        <div className="quotes"><img src="img/quotes.svg" alt /></div>
+                                        <div className="quotes"><img src="/img/quotes.svg" alt /></div>
                                     </div>
                                     <div className="content">
                                         Mentor có tâm, tận tình. Mình tìm được hướng đi trong lập trình front-end qua
                                         khóa học. Like cho 4 mentor.
                                     </div>
                                     <div className="bottom">
-                                        <a href="#" target="_blank"><img src="img/facebook.svg" alt /></a>
+                                        <a href="#" target="_blank"><img src="/img/facebook.svg" alt /></a>
                                         <span>09/10/2020</span>
                                     </div>
                                 </div>
@@ -34,7 +34,7 @@ export default function Testimonial() {
                                             <h4>Phạm Thành Trung</h4>
                                             <p>Thành viên CFD1</p>
                                         </div>
-                                        <div className="quotes"><img src="img/quotes.svg" alt /></div>
+                                        <div className="quotes"><img src="/img/quotes.svg" alt /></div>
                                     </div>
                                     <div className="content">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin libero
@@ -42,7 +42,7 @@ export default function Testimonial() {
                                         in, molestie lectus. Aenean porttitor purus at purus euismod tristique
                                     </div>
                                     <div className="bottom">
-                                        <a href="#" target="_blank"><img src="img/facebook.svg" alt /></a>
+                                        <a href="#" target="_blank"><img src="/img/facebook.svg" alt /></a>
                                         <span>01/10/2020</span>
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@ export default function Testimonial() {
                                             <h4>Nguyễn Văn Tuấn</h4>
                                             <p>Thành viên CFD1</p>
                                         </div>
-                                        <div className="quotes"><img src="img/quotes.svg" alt /></div>
+                                        <div className="quotes"><img src="/img/quotes.svg" alt /></div>
                                     </div>
                                     <div className="content">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin libero
@@ -60,7 +60,7 @@ export default function Testimonial() {
                                         in, molestie lectus. Aenean porttitor purus at purus euismod tristique
                                     </div>
                                     <div className="bottom">
-                                        <a href="#" target="_blank"><img src="img/facebook.svg" alt /></a>
+                                        <a href="#" target="_blank"><img src="/img/facebook.svg" alt /></a>
                                         <span>01/10/2020</span>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@ export default function Testimonial() {
                                                     <h4>Tiến Tài</h4>
                                                     <p>Thành viên CFD1</p>
                                                 </div>
-                                                <div className="quotes"><img src="img/quotes.svg" alt /></div>
+                                                <div className="quotes"><img src="/img/quotes.svg" alt /></div>
                                             </div>
                                             <div className="content">
                                                 Mentor có tâm, tận tình. Mình tìm được hướng đi trong lập trình
@@ -88,7 +88,7 @@ export default function Testimonial() {
                                                 khóa học. Like cho 4 mentor.
                                             </div>
                                             <div className="bottom">
-                                                <a href="#" target="_blank"><img src="img/facebook.svg" alt /></a>
+                                                <a href="#" target="_blank"><img src="/img/facebook.svg" alt /></a>
                                                 <span>09/10/2020</span>
                                             </div>
                                         </div>
@@ -105,7 +105,7 @@ export default function Testimonial() {
                                                         <h4>Nguyễn Văn Tuấn</h4>
                                                         <p>Thành viên CFD1</p>
                                                     </div>
-                                                    <div className="quotes"><img src="img/quotes.svg" alt /></div>
+                                                    <div className="quotes"><img src="/img/quotes.svg" alt /></div>
                                                 </div>
                                                 <div className="content">
                                                     Mentor có tâm, tận tình. Mình tìm được hướng đi trong lập trình
@@ -113,7 +113,7 @@ export default function Testimonial() {
                                                     khóa học. Like cho 4 mentor.
                                                 </div>
                                                 <div className="bottom">
-                                                    <a href="#" target="_blank"><img src="img/facebook.svg" alt /></a>
+                                                    <a href="#" target="_blank"><img src="/img/facebook.svg" alt /></a>
                                                     <span>09/10/2020</span>
                                                 </div>
                                             </div>
@@ -130,7 +130,7 @@ export default function Testimonial() {
                                                         <h4>Phạm Thành Trung</h4>
                                                         <p>Thành viên CFD1</p>
                                                     </div>
-                                                    <div className="quotes"><img src="img/quotes.svg" alt /></div>
+                                                    <div className="quotes"><img src="/img/quotes.svg" alt /></div>
                                                 </div>
                                                 <div className="content">
                                                     Mentor có tâm, tận tình. Mình tìm được hướng đi trong lập trình
@@ -138,7 +138,7 @@ export default function Testimonial() {
                                                     khóa học. Like cho 4 mentor.
                                                 </div>
                                                 <div className="bottom">
-                                                    <a href="#" target="_blank"><img src="img/facebook.svg" alt /></a>
+                                                    <a href="#" target="_blank"><img src="/img/facebook.svg" alt /></a>
                                                     <span>09/10/2020</span>
                                                 </div>
                                             </div>
