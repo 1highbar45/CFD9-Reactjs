@@ -1,0 +1,56 @@
+.toDoList{
+    :global{
+        .input-group{
+            display: flex;
+            border: 1px solid #ccc;
+            align-items: center;
+            justify-self: unset;
+            width: 100%;
+            input{
+                flex: 1;
+                height: 40px;
+                border: none;
+                outline: none;
+                padding: 0 10px;
+            }
+            button{
+                display: block;
+                background: #bfbfbf;
+                border: none;
+                height: 40px;
+                padding: 0 20px;
+                cursor: pointer;
+
+                &:disabled{
+                    background: white;
+                    cursor: no-drop;
+                }
+            }
+        }
+        .card-list{
+            display: flex;
+            gap: 20px;
+            .card {
+                flex: 1;
+            }
+        }
+        .to-do-item{
+            display: flex;
+            border: 1px solid #ccc;
+            padding: 5px 20px;
+            margin-bottom: 5px;
+            background: orange;
+            .name{
+                flex: 1;
+            }
+
+            &.isCompleted{
+                text-decoration: line-through;
+                background: blue;
+                // button {
+                //     display: none;
+                // }
+            }
+        }
+    }
+}
