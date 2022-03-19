@@ -25,9 +25,6 @@ export default function Sidebar() {
                             <NavLink onClick={close} to="/khoa-hoc">Khóa Học</NavLink>
                         </li>
                         <li>
-                            <NavLink onClick={close} to="">Dự Án</NavLink>
-                        </li>
-                        <li>
                             <NavLink onClick={close} to="/lien-he">Liên hệ</NavLink>
                         </li>
                     </ul>

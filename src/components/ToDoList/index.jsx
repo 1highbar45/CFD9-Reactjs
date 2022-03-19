@@ -9,10 +9,16 @@ export default function ToDoList({ toDoList, handleAdd, handleCompleted, handleU
         setValue("")
     }
 
+    const _onKeyUp = (ev) => {
+        if (ev.key === 'Enter') {
+            _handleAdd()
+        }
+    }
+
     return (
         <div className={styles.toDoList}>
             <div className="input-group">
-                <input value={value} onChange={ev => setValue(ev.target.value)} type="text" placeholder='Nhap cong viec..' />
+                <input onKeyUp={_onKeyUp} value={value} onChange={ev => setValue(ev.target.value)} type="text" placeholder='Nhap cong viec..' />
                 <button disabled={!value} onClick={_handleAdd}>Add</button>
             </div>
             <h1>Dashboard</h1>

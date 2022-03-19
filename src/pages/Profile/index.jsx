@@ -1,5 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Navigate, NavLink, Outlet } from 'react-router-dom'
+import Coin from './Coin';
+import ProfileCourse from './Course';
+import Info from './Info';
+import ProfilePayment from './Payment';
+import Project from './Project';
 
 export default function Profile({ path }) {
     const login = true;

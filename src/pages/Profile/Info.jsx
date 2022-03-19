@@ -1,6 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Info() {
+    const navigate = useNavigate();
+
+    const onClick = () => {
+        navigate("/")
+    }
+
     return (
         <div className="tab1" >
             <label>
@@ -23,7 +30,7 @@ export default function Info() {
                 <p>Skype<span>*</span></p>
                 <input type="text" placeholder="Skype url" />
             </label>
-            <div className="btn main rect">LƯU LẠI</div>
+            <div className="btn main rect" onClick={onClick}>LƯU LẠI</div>
         </div>
     )
 }
