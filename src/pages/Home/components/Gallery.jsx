@@ -1,6 +1,9 @@
 import React from 'react'
+import { homeService } from '../../../services/home'
 
 export default function Gallery() {
+    const { data: gallery } = useQuery(() => homeService.gallery())
+
     return (
         <section className="section-gallery">
             <div className="textbox">

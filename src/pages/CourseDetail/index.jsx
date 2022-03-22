@@ -1,21 +1,56 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { generatePath, Link, useNavigate, useParams } from 'react-router-dom'
+import CourseAccordion from '../../components/CourseAccordion'
+import Teacher from '../../components/Teacher'
+import { COURSE_REGISTER_PATH, HOME_PATH } from '../../constants/path'
+import useQuery from '../../hooks/useQuery'
+import { courseService } from '../../services/course'
+import { currency } from '../../utils/number'
+import Skeleton from '@mui/material/Skeleton';
 
 export default function CourseDetail() {
-    const { slug } = useParams()
+    const { id } = useParams()
+    const navigate = useNavigate()
+    // const [detail, setDetail] = useState({})
+    // useEffect(async () => {
+    //     const res = await courseService.getDetail(id)
+    //     if (res.data.data) {
+    //         setDetail(res.data.data)
+    //     } else {
+    //         navigate(HOME_PATH)
+    //     }
+    // }, [id])
+    const { data: detail, loading } = useQuery(async () => {
+        const res = await courseService.getDetail(id)
+        if (res.data.data) {
+            return res
+        } else {
+            navigate(HOME_PATH)
+        }
+    }, [], {})
+
+    const { teacher, mentor } = detail
+
+    const registerPath = generatePath(COURSE_REGISTER_PATH, { id })
 
     return (
         <main className="course-detail" id="main">
-            <section className="banner style2" style={{ "--background": "#cde6fb" }}>
+            <section className="banner style2" style={{ "--background": detail.template_color_banner }}>
                 <div className="container">
                     <div className="info">
-                        <h1>Thực Chiến
-                            front-end căn bản</h1>
-                        <div className="row">
-                            <div className="date"><strong>Khai giảng:</strong> 12/10/2020</div>
-                            <div className="time"><strong>Thời lượng:</strong> 18 buổi</div>
-                        </div>
-                        <div className="btn white round" style={{ "--color-btn": "#70b6f1" }}>đăng ký</div>
+                        {
+                            !loading ? <h1>Thực Chiến {detail.title}</h1> :
+                                <Skeleton width={'100%'} height={128} />
+                        }
+                        {
+                            !loading ? (
+                                <div className="row">
+                                    <div className="date"><strong>Khai giảng:</strong> 12/10/2020</div>
+                                    <div className="time"><strong>Thời lượng:</strong> 18 buổi</div>
+                                </div>
+                            ) : <Skeleton width={'70%'} variant="text" />
+                        }
+                        <Link to={registerPath} className="btn white round" style={{ "--color-btn": detail.template_color_btn }}>đăng ký</Link>
                     </div>
                 </div>
                 <div className="bottom">
@@ -25,80 +60,28 @@ export default function CourseDetail() {
                                 <img src="/img/play-icon-white.png" alt />
                             </div> <span>giới thiệu</span>
                         </div>
-                        <div className="money">4.000.000 VND</div>
+                        <div className="money">{currency(detail.money)} VND</div>
                     </div>
                 </div>
             </section>
             <section className="section-2">
                 <div className="container">
-                    <p className="des">Many Laravel apps don’t warrant the complexity of a full front-end framework like Vue or
-                        React. In this series, we’ll walk through a handful of simple ways to add dynamic functionality to
-                        your apps.</p>
+                    {
+                        !loading ? <p className="des">{detail.long_description}</p>
+                            : <Skeleton height={300} />
+                    }
                     <h2 className="title">giới thiệu về khóa học</h2>
                     <div className="cover">
                         <img src="/img/course-detail-img.png" alt />
                     </div>
                     <h3 className="title">nội dung khóa học</h3>
-                    <div className="accordion">
-                        <div className="accordion__title">
-                            <div className="date">Ngày 1</div>
-                            <h3>Giới thiệu HTML, SEO, BEM.</h3>
-                        </div>
-                        <div className="content">
-                            I'd like to demonstrate a powerful little pattern called “Server-Fetched Partials” that offers
-                            some tangible benefits over alternatives like VueJS for simple page interactions.
-                        </div>
-                    </div>
-                    <div className="accordion">
-                        <div className="accordion__title">
-                            <div className="date">Ngày 2</div>
-                            <h3>CSS, CSS3, Flexbox, Grid</h3>
-                        </div>
-                        <div className="content">
-                            I'd like to demonstrate a powerful little pattern called “Server-Fetched Partials” that offers
-                            some tangible benefits over alternatives like VueJS for simple page interactions.
-                        </div>
-                    </div>
-                    <div className="accordion">
-                        <div className="accordion__title">
-                            <div className="date">Ngày 3</div>
-                            <h3>Media Queries</h3>
-                        </div>
-                        <div className="content">
-                            I'd like to demonstrate a powerful little pattern called “Server-Fetched Partials” that offers
-                            some tangible benefits over alternatives like VueJS for simple page interactions.
-                        </div>
-                    </div>
-                    <div className="accordion">
-                        <div className="accordion__title">
-                            <div className="date">Ngày 4</div>
-                            <h3>Boostrap 4</h3>
-                        </div>
-                        <div className="content">
-                            I'd like to demonstrate a powerful little pattern called “Server-Fetched Partials” that offers
-                            some tangible benefits over alternatives like VueJS for simple page interactions.
-                        </div>
-                    </div>
-                    <div className="accordion">
-                        <div className="accordion__title">
-                            <div className="date">Ngày 5</div>
-                            <h3>Thực hành dự án website Landing Page</h3>
-                        </div>
-                        <div className="content">
-                            I'd like to demonstrate a powerful little pattern called “Server-Fetched Partials” that offers
-                            some tangible benefits over alternatives like VueJS for simple page interactions.
-                        </div>
-                    </div>
-                    <div className="accordion">
-                        <div className="accordion__title">
-                            <div className="date">Ngày 6</div>
-                            <h3>Cài đặt Grunt và cấu trúc thư mục dự án</h3>
-                        </div>
-                        <div className="content">
-                            I'd like to demonstrate a powerful little pattern called “Server-Fetched Partials” that offers
-                            some tangible benefits over alternatives like VueJS for simple page interactions.
-                        </div>
-                    </div>
+                    {
+                        !loading ? detail.content?.map((e, i) => <CourseAccordion key={1} index={1 + i} {...e} />)
+                            : [...Array(18)].map((_, i) => <div key={i} style={{ marginBottom: 8 }}>
+                                <Skeleton height={80} />
+                            </div>)
+                    }
+                    {/* {detail.content?.map((e, i) => <CourseAccordion key={1} index={1 + i} {...e} />)} */}
                     <h3 className="title">yêu cầu cần có</h3>
                     <div className="row row-check">
                         <div className="col-md-6">Đã từng học qua HTML, CSS</div>
@@ -107,7 +90,7 @@ export default function CourseDetail() {
                     </div>
                     <h3 className="title">hình thức học</h3>
                     <div className="row row-check">
-                        <div className="col-md-6">Học offline tại văn phòng, cùng Trần Nghĩa và 3 đồng nghiệp.</div>
+                        <div className="col-md-6">Học offline tại văn phòng, cùng {detail.teacher?.title} và 3 đồng nghiệp.</div>
                         <div className="col-md-6">Dạy và thực hành thêm bài tập online
                             thông qua Skype.</div>
                         <div className="col-md-6">Được các mentor và các bạn trong team CFD hổ trợ thông qua group CFD Facebook
@@ -123,33 +106,16 @@ export default function CourseDetail() {
                         <strong>Thời gian học: </strong> Thứ 3 từ 18h45-21h45, Thứ 7 từ 12h-15h, Chủ nhật từ 15h-18h
                     </p>
                     <h3 className="title">Người dạy</h3>
-                    <div className="teaches">
-                        <div className="teacher">
-                            <div className="avatar">
-                                <img src="/img/avatar-lg.png" alt />
-                            </div>
-                            <div className="info">
-                                <div className="name">TRẦN NGHĨA</div>
-                                <div className="title">Founder CFD &amp; Creative Front-End Developer</div>
-                                <p className="intro">
-                                    My education, career, and even personal life have been molded by one simple principle;
-                                    well
-                                    designed information resonates with people and can change lives.I have a passion for
-                                    making
-                                    information resonate. It all starts with how people think. With how humans work. As
-                                    humans
-                                    we have learned how to read and write and while that is incredible, we are also already
-                                    hard-wired to do some things a bit more "automatically"
-                                </p>
-                                <p><strong>Website:</strong> <a href="#">http://nghiatran.info</a></p>
-                            </div>
-                        </div>
-                    </div>
+                    <Teacher teacher={teacher} />
+                    <h3 className="title">Người hướng dẫn</h3>
+                    {
+                        mentor?.map(e => <Teacher key={e.id} teacher={e} />)
+                    }
                     <div className="bottom">
                         <div className="user">
                             <img src="/img/user-group-icon.png" alt /> 12 bạn đã đăng ký
                         </div>
-                        <div className="btn main btn-register round">đăng ký</div>
+                        <Link to={registerPath} className="btn main btn-register round">đăng ký</Link>
                         <div className="btn-share btn overlay round btn-icon">
                             <img src="/img/facebook.svg" alt />
                         </div>
@@ -320,6 +286,6 @@ export default function CourseDetail() {
                     </div>
                 </div>
             </section>
-        </main>
+        </main >
     )
 }

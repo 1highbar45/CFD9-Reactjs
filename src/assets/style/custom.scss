@@ -2,3 +2,12 @@
     background-color: #00afab;
     color: white
 }
+
+.course .wrap .bottom .teacher .avatar{
+    height: 36px;
+    min-width: 36px;
+    img{
+        object-fit: cover;
+        height: 100%;
+    }
+}

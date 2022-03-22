@@ -1,13 +1,16 @@
+import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Accordion from './components/Accordion'
 import { CountDownBox } from './components/CountDownBox'
 import RegisterForm from './components/RegisterForm'
 import ToDoList from './components/ToDoList'
+import { COURSE_DETAIL_PATH, COURSE_REGISTER_PATH, HOME_PATH } from './constants/path'
 import MainLayout from './layouts/MainLayout'
 import Cooperate from './pages/Cooperate'
 import Course from './pages/Course'
 import CourseDetail from './pages/CourseDetail'
+import CourseRegister from './pages/CourseRegister'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Page404 from './pages/Page404'
@@ -81,10 +84,11 @@ function App() {
       {/* </MainLayout> */}
       <Routes>
         <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
+          <Route path={HOME_PATH} element={<Home />} />
           <Route path="/khoa-hoc" element={<Course />} />
           <Route path="/lien-he" element={<Cooperate />} />
-          <Route path="/khoa-hoc/:slug" element={<CourseDetail />} />
+          <Route path={COURSE_DETAIL_PATH} element={<CourseDetail />} />
+          <Route path={COURSE_REGISTER_PATH} element={<CourseRegister />} />
           <Route path="/ca-nhan" element={<Profile path="/ca-nhan" />} >
             <Route index element={<Info />} />
             <Route path="khoa-hoc" element={<ProfileCourse />} />
@@ -102,3 +106,8 @@ function App() {
 }
 
 export default App
+
+// axios.get('http://cfd-reactjs.herokuapp.com/elearning/v4/courses')
+//   .then(res => {
+//     console.log(res);
+//   })
