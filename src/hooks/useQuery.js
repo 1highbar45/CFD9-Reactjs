@@ -7,7 +7,7 @@ const useQuery = (callback, dependencyList = [], initialValue = undefined) => {
         setLoading(true)
         callback()
             .then(res => {
-                setData(res.data.data)
+                setData(res.data)
                 setLoading(false)
             })
     }, dependencyList)

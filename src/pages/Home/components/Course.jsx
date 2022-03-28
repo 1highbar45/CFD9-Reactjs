@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CourseCard from '../../../components/CourseCard'
+import Skeleton from '@mui/material/Skeleton';
 
-export default function Course({ courses }) {
+export default function Course({ courses, loading }) {
     return (
         <>
             <section className="section-courseoffline">
@@ -16,7 +17,11 @@ export default function Course({ courses }) {
                     </div>
                     <div className="list row">
                         {
-                            courses?.map(e => <CourseCard key={e.id} {...e} />)
+                            !loading ? courses?.map(e => <CourseCard key={e.id} {...e} />)
+                                : [...Array(12)].map((_, i) => <div key={i} style={{ marginTop: 15, padding: 15 }}>
+                                    < Skeleton variant="rectangular" width={290} height={435} />
+                                </div>)
+                            // courses?.map(e => <CourseCard key={e.id} {...e} />)
                         }
                     </div>
                 </div>

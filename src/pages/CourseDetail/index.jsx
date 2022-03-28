@@ -11,6 +11,7 @@ import Skeleton from '@mui/material/Skeleton';
 export default function CourseDetail() {
     const { id } = useParams()
     const navigate = useNavigate()
+    const [accordionOpen, setAccordionOpen] = useState(-1)
     // const [detail, setDetail] = useState({})
     // useEffect(async () => {
     //     const res = await courseService.getDetail(id)
@@ -22,7 +23,7 @@ export default function CourseDetail() {
     // }, [id])
     const { data: detail, loading } = useQuery(async () => {
         const res = await courseService.getDetail(id)
-        if (res.data.data) {
+        if (res.data) {
             return res
         } else {
             navigate(HOME_PATH)
@@ -75,13 +76,20 @@ export default function CourseDetail() {
                         <img src="/img/course-detail-img.png" alt />
                     </div>
                     <h3 className="title">nội dung khóa học</h3>
-                    {
-                        !loading ? detail.content?.map((e, i) => <CourseAccordion key={1} index={1 + i} {...e} />)
+                    {/* {
+                        !loading ? detail.content?.map((e, i) => <CourseAccordion onClick={() => setAccordionOpen(i)} open={i === accordionOpen} key={1} index={1 + i} {...e} />)
                             : [...Array(18)].map((_, i) => <div key={i} style={{ marginBottom: 8 }}>
                                 <Skeleton height={80} />
                             </div>)
-                    }
-                    {/* {detail.content?.map((e, i) => <CourseAccordion key={1} index={1 + i} {...e} />)} */}
+                    } */}
+                    <CourseAccordion.Group>
+                        {
+                            !loading ? detail.content?.map((e, i) => <CourseAccordion open={i === accordionOpen} key={1} index={1 + i} {...e} />)
+                                : [...Array(18)].map((_, i) => <div key={i} style={{ marginBottom: 8 }}>
+                                    <Skeleton height={80} />
+                                </div>)
+                        }
+                    </CourseAccordion.Group>
                     <h3 className="title">yêu cầu cần có</h3>
                     <div className="row row-check">
                         <div className="col-md-6">Đã từng học qua HTML, CSS</div>

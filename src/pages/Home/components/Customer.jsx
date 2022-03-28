@@ -1,6 +1,12 @@
 import React from 'react'
+import useQuery from '../../../hooks/useQuery';
+import { homeService } from '../../../services/home'
 
 export default function Customer() {
+
+    const { data: review } = useQuery(() => homeService.review())
+    console.log(review);
+
     return (
         <section className="section-testimonial">
             <div className="container">
@@ -151,6 +157,6 @@ export default function Customer() {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     )
 }

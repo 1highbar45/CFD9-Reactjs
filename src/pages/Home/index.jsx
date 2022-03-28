@@ -17,16 +17,17 @@ export default function Home() {
     //             setCourses(res.data.data);
     //         })
     // }, [])
-    const { data: courses } = useQuery(() => {
+    const { data: courses, loading } = useQuery(() => {
         return courseService.getList()
     }, []);
 
-    const { data: review } = useQuery(() => homeService.review())
-    
+
+    // console.log(courses);
+
     return (
         <main className="homepage" id="main">
             <Banner />
-            <Course courses={courses} />
+            <Course courses={courses} loading={loading} />
             <Special />
             <Customer />
             <Gallery />

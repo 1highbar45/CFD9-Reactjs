@@ -5,14 +5,16 @@ import Accordion from './components/Accordion'
 import { CountDownBox } from './components/CountDownBox'
 import RegisterForm from './components/RegisterForm'
 import ToDoList from './components/ToDoList'
-import { COURSE_DETAIL_PATH, COURSE_REGISTER_PATH, HOME_PATH } from './constants/path'
+import { COURSE_DETAIL_PATH, COURSE_REGISTER_PATH, HOME_PATH, LOGIN_PATH } from './constants/path'
 import MainLayout from './layouts/MainLayout'
 import Cooperate from './pages/Cooperate'
+import Counter from './pages/Count'
 import Course from './pages/Course'
 import CourseDetail from './pages/CourseDetail'
 import CourseRegister from './pages/CourseRegister'
+// import Login from './pages/Login'
 import Home from './pages/Home'
-import Login from './pages/Login'
+import LoginPage from './pages/LoginPage'
 import Page404 from './pages/Page404'
 import Payment from './pages/Payment'
 import Profile from './pages/Profile'
@@ -21,7 +23,7 @@ import ProfileCourse from './pages/Profile/Course'
 import Info from './pages/Profile/Info'
 import ProfilePayment from './pages/Profile/Payment'
 import Project from './pages/Profile/Project'
-import Register from './pages/Register'
+// import Register from './pages/Register'
 import Team from './pages/Team'
 
 const TODO_APP_KEY_STORAGE = 'TODO_APP'
@@ -87,6 +89,8 @@ function App() {
           <Route path={HOME_PATH} element={<Home />} />
           <Route path="/khoa-hoc" element={<Course />} />
           <Route path="/lien-he" element={<Cooperate />} />
+          <Route path="/counter" element={<Counter />} />
+          <Route path={LOGIN_PATH} element={<LoginPage />} />
           <Route path={COURSE_DETAIL_PATH} element={<CourseDetail />} />
           <Route path={COURSE_REGISTER_PATH} element={<CourseRegister />} />
           <Route path="/ca-nhan" element={<Profile path="/ca-nhan" />} >

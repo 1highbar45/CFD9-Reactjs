@@ -1,27 +1,26 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Navigate, NavLink, Outlet } from 'react-router-dom'
-import Coin from './Coin';
-import ProfileCourse from './Course';
-import Info from './Info';
-import ProfilePayment from './Payment';
-import Project from './Project';
+import { AuthContext } from '../../context/AuthContext';
 
 export default function Profile({ path }) {
-    const login = true;
+    const { user } = useContext(AuthContext)
+    // const login = true;
+
+    if (!user) return <Navigate to="/" />
 
     return (
         <main className="profile" id="main">
-            {
+            {/* {
                 !login && <Navigate to="/" />
-            }
+            } */}
             <section>
                 <div className="top-info">
                     <div className="avatar">
                         {/* <span class="text">H</span> */}
-                        <img src="/img/avatar-lg.png" alt />
+                        <img src={user.avatar} alt />
                         <div className="camera" />
                     </div>
-                    <div className="name">trần nghĩa</div>
+                    <div className="name">{user.name}</div>
                     <p className="des">Thành viên của team CFD1-OFFLINE</p>
                 </div>
                 <div className="container">
