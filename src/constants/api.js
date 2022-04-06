@@ -9,7 +9,7 @@ const api = axios.create({
 api.interceptors.response.use((res) => {
     return res.data
 }, async (error) => {
-    if (error.request.status === 403) {
+    if (error.request.data.error_code === 'TOKEN_EXPIRED') {
         console.log(error);
 
         let token = getToken()

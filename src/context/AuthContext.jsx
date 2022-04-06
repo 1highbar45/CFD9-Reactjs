@@ -1,8 +1,8 @@
 import { createContext, useEffect, useState } from "react";
-import { TOKEN_STORAGE_KEY, USER_STORAGE_KEY } from "../constants/key";
+import { USER_STORAGE_KEY } from "../constants/key";
 import { authService } from "../services/auth";
 import { userService } from "../services/user";
-import { clearToken, getToken } from "../utils/token";
+import { clearToken, getToken, TOKEN_STORAGE_KEY } from "../utils/token";
 
 export const AuthContext = createContext()
 

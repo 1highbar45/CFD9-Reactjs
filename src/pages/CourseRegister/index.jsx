@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
+import Checkbox from '../../components/Checkbox'
+import { useCourseDetail } from '../../hooks/useCourseDetail'
 import { courseService } from '../../services/course'
 import { currency } from '../../utils/number'
 
 export default function CourseRegister() {
     // const [detail, setDetail] = useState({})
+    const coinRef = useRef({ abc: 123 })
     const { id } = useParams()
+
+    const [form, setForm] = useState({})
 
     // useEffect(async () => {
     //     const res = await courseService.getDetail(id)
@@ -14,14 +19,37 @@ export default function CourseRegister() {
     //     }
     // }, [id])
 
-    const { data: detail } = useQuery(async () => {
-        const res = await courseService.getDetail(id)
-        if (res.data.data) {
-            return res
-        } else {
-            navigate(HOME_PATH)
+    const detail = useCourseDetail(id)
+
+    // const { data: detail } = useQuery(async () => {
+    //     const res = await courseService.getDetail(id)
+    //     if (res.data.data) {
+    //         return res
+    //     } else {
+    //         navigate(HOME_PATH)
+    //     }
+    // }, [], {})
+
+    useEffect(() => {
+        // coinRef.current.checked = true
+    }, [])
+
+    const onSubmit = (ev) => {
+        ev.preventDefault();
+
+        const errorObj = {}
+
+        if (!form.username) {
+            errorObj.username = "Username la bat buoc"
         }
-    }, [], {})
+
+        const coin = coinRef.current.checked
+        console.log('use coin', coin);
+        setErrors(errorObj)
+        if (Object.keys(errorObj).length === 0) {
+            console.log('thanh cong');
+        }
+    }
 
     return (
         <main className="register-course" id="main">
@@ -38,7 +66,7 @@ export default function CourseRegister() {
                         <div className="form">
                             <label>
                                 <p>Họ và tên<span>*</span></p>
-                                <input type="text" placeholder="Họ và tên bạn" />
+                                <input type="text" placeholder="Họ và tên bạn" onChange={ev => form.username = ev.target.value} />
                             </label>
                             <label>
                                 <p>Số điện thoại<span>*</span></p>
@@ -52,16 +80,15 @@ export default function CourseRegister() {
                                 <p>URL Facebook<span>*</span></p>
                                 <input type="text" placeholder="https://facebook.com" />
                             </label>
-                            <label className="disable">
+                            <Checkbox label='Sử dụng COIN' ref={coinRef}>Hiện có <strong>300 COIN</strong></Checkbox>
+                            {/* <label className="disable">
                                 <p>Sử dụng COIN</p>
                                 <div className="checkcontainer">
                                     Hiện có <strong>300 COIN</strong>
-                                    {/* Giảm giá còn <span><strong>5.800.000 VND</strong>, còn lại 100 COIN</span> */}
-                                    {/* Cần ít nhất 200 COIN để giảm giá */}
-                                    <input type="checkbox" defaultChecked="checked" />
+                                    <input type="checkbox" defaultChecked="checked"  />
                                     <span className="checkmark" />
                                 </div>
-                            </label>
+                            </label> */}
                             <label>
                                 <p>Hình thức thanh toán</p>
                                 <div className="select">
@@ -76,7 +103,7 @@ export default function CourseRegister() {
                                 <p>Ý kiến cá nhân</p>
                                 <input type="text" placeholder="Mong muốn cá nhân và lịch bạn có thể học." />
                             </label>
-                            <div className="btn main rect">đăng ký</div>
+                            <div onClick={onSubmit} className="btn main rect">đăng ký</div>
                         </div>
                     </div>
                 </div>
@@ -93,6 +120,9 @@ export default function CourseRegister() {
           <a href="/" class="btn main rect">về trang chủ</a>
       </div> */}
         </main>
-
     )
 }
+
+//cach 1: lay html DOM de thao tac
+//cach 2: khi user muốn forward ref từ component qua 1 element nào đó
+//cach 3: khi component muốn trả về 1 cách thể hiện khác của ref

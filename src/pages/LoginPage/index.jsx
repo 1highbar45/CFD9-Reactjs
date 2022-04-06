@@ -1,11 +1,16 @@
 import React, { useContext, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
+import { authLogin } from '../../stores/auth/auth'
 
 export default function LoginPage() {
-    const { handleLogin, user } = useContext(AuthContext)
+    // const { handleLogin, user } = useContext(AuthContext)
     const [form, setForm] = useState({})
-    const [errorMessage, setErrorMessage] = useState('')
+    // const [errorMessage, setErrorMessage] = useState('')
+
+    const { user, errorMessage } = useSelector(store => store.auth)
+    const dispatch = useDispatch()
 
     const [errors, setErrors] = useState({})
 
@@ -24,11 +29,7 @@ export default function LoginPage() {
 
         setErrors(errorObj)
         if (Object.keys(errorObj).length === 0) {
-            const message = await handleLogin(form)
-            // message is error
-            if (message) {
-                setErrorMessage(message)
-            }
+            dispatch(authLogin(form))
         }
     }
 

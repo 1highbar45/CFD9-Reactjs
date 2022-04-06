@@ -7,6 +7,10 @@ import useQuery from '../../hooks/useQuery'
 import { courseService } from '../../services/course'
 import { currency } from '../../utils/number'
 import Skeleton from '@mui/material/Skeleton';
+import { useDispatch, useSelector } from 'react-redux'
+// import { getCourseDetail } from '../../stores/course'
+import { useCourseDetail } from '../../hooks/useCourseDetail'
+import Head from '../../components/Head'
 
 export default function CourseDetail() {
     const { id } = useParams()
@@ -21,21 +25,30 @@ export default function CourseDetail() {
     //         navigate(HOME_PATH)
     //     }
     // }, [id])
-    const { data: detail, loading } = useQuery(async () => {
-        const res = await courseService.getDetail(id)
-        if (res.data) {
-            return res
-        } else {
-            navigate(HOME_PATH)
-        }
-    }, [], {})
+    // const { data: detail, loading } = useQuery(async () => {
+    //     const res = await courseService.getDetail(id)
+    //     if (res.data) {
+    //         return res
+    //     } else {
+    //         navigate(HOME_PATH)
+    //     }
+    // }, [], {})
 
-    const { teacher, mentor } = detail
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [id])
 
+    const detail = useCourseDetail(id)
     const registerPath = generatePath(COURSE_REGISTER_PATH, { id })
+    // const detail = cache[id]
+    const loading = !detail?.id
+    const { teacher, mentor } = detail
 
     return (
         <main className="course-detail" id="main">
+            <Head>
+                <title>{detail.title}</title>
+            </Head>
             <section className="banner style2" style={{ "--background": detail.template_color_banner }}>
                 <div className="container">
                     <div className="info">

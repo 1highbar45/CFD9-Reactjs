@@ -5,7 +5,7 @@ import { homeService } from '../../../services/home'
 export default function Customer() {
 
     const { data: review } = useQuery(() => homeService.review())
-    console.log(review);
+    // console.log(review);
 
     return (
         <section className="section-testimonial">
