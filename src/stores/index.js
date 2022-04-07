@@ -1,4 +1,4 @@
-import { createStore } from "redux"
+import { combineReducers, createStore } from "redux"
 import { authReducer } from "./auth"
 
 const counterReducer = (state = { value: 0 }, action) => {
